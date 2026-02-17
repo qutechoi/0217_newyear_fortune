@@ -4,12 +4,22 @@ body { margin: 0; }
 .container { max-width: 720px; margin: 0 auto; padding: 36px 20px 60px; text-align: center; }
 header h1 { margin-bottom: 6px; }
 header p { color: #555; margin-top: 0; }
-.card { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin: 24px 0; min-height: 160px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.card { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin: 24px 0; }
 .msg { font-size: 18px; }
 .actions { display:flex; gap: 12px; justify-content:center; }
 button { background:#111827; color:#fff; border:none; padding:12px 18px; border-radius:10px; font-size:16px; cursor:pointer; }
 button.ghost { background:#fff; color:#111827; border:2px solid #111827; }
 footer { margin-top: 24px; color: #777; }
 
-@keyframes shake { 0% { transform: rotate(0deg); } 25% { transform: rotate(1.5deg);} 50% { transform: rotate(0deg);} 75% { transform: rotate(-1.5deg);} 100% { transform: rotate(0deg);} }
-.shake { animation: shake 0.4s ease; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-top: 18px; }
+.card-btn { background: transparent; border: none; padding: 0; cursor: pointer; perspective: 900px; }
+.card-btn:disabled { cursor: default; opacity: 0.9; }
+.flip { position: relative; width: 100%; height: 180px; transform-style: preserve-3d; transition: transform 0.6s; }
+.flip-on { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 12px; display:flex; align-items:center; justify-content:center; padding: 12px; }
+.back { background: linear-gradient(135deg, #0f172a, #1f2937); color:#fff; font-size: 36px; }
+.front { background: #fff7ed; border: 2px solid #f59e0b; transform: rotateY(180deg); flex-direction: column; gap: 6px; }
+.art { font-size: 32px; }
+.title { font-weight: 700; font-size: 15px; }
+.desc { font-size: 13px; color:#6b7280; }
+.result { margin-top: 20px; padding: 16px; background:#fef3c7; border-radius: 12px; }
